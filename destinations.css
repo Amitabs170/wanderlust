@@ -1,0 +1,315 @@
+
+/* ---------- Page Header ---------- */
+
+.page-header{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:var(--text-white);
+    text-align:center;
+    padding:80px 20px;
+}
+
+.page-header h1{
+    color:var(--text-white);
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.page-header p{
+    color:#f4f4f4;
+    font-size:1.1rem;
+}
+
+/* ---------- Search Section ---------- */
+
+.search-section{
+    padding:50px 0;
+}
+
+.search-box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.search-box input{
+    width:400px;
+    max-width:100%;
+    padding:14px 18px;
+    border:1px solid var(--border);
+    border-radius:var(--radius-md);
+    transition:var(--transition);
+}
+
+.search-box input:focus{
+    outline:none;
+    border-color:var(--primary);
+    box-shadow:0 0 10px rgba(108,99,255,.2);
+}
+
+/* ---------- Filter Buttons ---------- */
+
+.filters{
+    padding-bottom:40px;
+}
+
+.filter-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.filter-btn{
+    padding:10px 22px;
+    border:none;
+    background:var(--surface);
+    color:var(--text);
+    border-radius:30px;
+    box-shadow:var(--shadow-sm);
+    cursor:pointer;
+    transition:var(--transition);
+    font-weight:600;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+    background:var(--primary);
+    color:white;
+}
+
+/* ---------- Destination Grid ---------- */
+
+.destinations{
+    padding:80px 0;
+}
+
+.destination-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.destination-card{
+    background:var(--surface);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+    transition:var(--transition);
+}
+
+.destination-card:hover{
+    transform:translateY(-10px);
+    box-shadow:var(--shadow-lg);
+}
+
+.destination-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.destination-content{
+    padding:25px;
+}
+
+.destination-content h3{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.destination-content p{
+    margin-bottom:15px;
+}
+
+.destination-meta{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+    color:var(--text-light);
+    font-size:0.95rem;
+}
+
+.destination-price{
+    color:var(--primary);
+    font-size:1.2rem;
+    font-weight:bold;
+}
+
+/* ---------- Rating ---------- */
+
+.rating{
+    color:#FFC107;
+    margin-bottom:15px;
+}
+
+/* ---------- Weather Preview ---------- */
+
+.weather-preview{
+    padding:80px 0;
+    background:var(--surface-light);
+}
+
+.weather-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.weather-card{
+    background:white;
+    padding:30px;
+    border-radius:var(--radius-lg);
+    text-align:center;
+    box-shadow:var(--shadow-sm);
+    transition:var(--transition);
+}
+
+.weather-card:hover{
+    transform:translateY(-8px);
+}
+
+.weather-card h3{
+    color:var(--primary);
+}
+
+.temperature{
+    font-size:2.5rem;
+    font-weight:bold;
+    color:var(--primary);
+    margin:15px 0;
+}
+
+/* ---------- Popular Categories ---------- */
+
+.popular-categories{
+    padding:80px 0;
+}
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.category-card{
+    background:white;
+    padding:30px;
+    text-align:center;
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-sm);
+    transition:var(--transition);
+}
+
+.category-card:hover{
+    background:var(--primary);
+    color:white;
+    transform:translateY(-8px);
+}
+
+.category-card i{
+    font-size:2.5rem;
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.category-card:hover i,
+.category-card:hover h3,
+.category-card:hover p{
+    color:white;
+}
+
+/* ---------- Pagination ---------- */
+
+.pagination{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:50px;
+}
+
+.pagination a{
+    width:45px;
+    height:45px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:white;
+    border-radius:50%;
+    box-shadow:var(--shadow-sm);
+    transition:var(--transition);
+}
+
+.pagination a:hover,
+.pagination a.active{
+    background:var(--primary);
+    color:white;
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:992px){
+
+.page-header h1{
+font-size:2.5rem;
+}
+
+.destination-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.search-box{
+flex-direction:column;
+}
+
+.search-box input{
+width:100%;
+}
+
+.destination-grid,
+.weather-grid,
+.category-grid{
+grid-template-columns:1fr;
+}
+
+.page-header{
+padding:60px 20px;
+}
+
+.page-header h1{
+font-size:2rem;
+}
+
+.filter-buttons{
+justify-content:flex-start;
+overflow-x:auto;
+padding-bottom:10px;
+}
+
+}
+
+@media(max-width:480px){
+
+.page-header h1{
+font-size:1.8rem;
+}
+
+.destination-content{
+padding:20px;
+}
+
+.temperature{
+font-size:2rem;
+}
+
+.pagination a{
+width:40px;
+height:40px;
+}
+
+}
