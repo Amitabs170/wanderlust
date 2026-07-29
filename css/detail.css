@@ -1,0 +1,290 @@
+/* ==========================================
+   DESTINATION DETAILS PAGE
+   detail.css
+   ========================================== */
+
+/* ---------- Banner ---------- */
+
+.destination-banner {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+}
+
+.destination-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner-content h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.banner-content p {
+    color: #f5f5f5;
+    font-size: 1.1rem;
+}
+
+/* ---------- Destination Overview ---------- */
+
+.destination-info {
+    padding: 80px 0;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+.description {
+    background: white;
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.quick-info {
+    background: white;
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.quick-info ul li {
+    margin-bottom: 18px;
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.quick-info strong {
+    color: var(--primary);
+}
+
+/* ---------- Image Gallery ---------- */
+
+.gallery {
+    padding: 80px 0;
+    background: var(--surface-light);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* ---------- Attractions ---------- */
+
+.attractions {
+    padding: 80px 0;
+}
+
+.attraction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 25px;
+}
+
+.attraction-card {
+    background: white;
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.attraction-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.attraction-card i {
+    font-size: 2.8rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+/* ---------- Travel Information ---------- */
+
+.travel-info {
+    padding: 80px 0;
+    background: var(--surface-light);
+}
+
+.travel-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.travel-table th,
+.travel-table td {
+    padding: 18px;
+    border-bottom: 1px solid var(--border);
+}
+
+.travel-table th {
+    background: var(--primary);
+    color: white;
+    text-align: left;
+}
+
+.travel-table tr:hover {
+    background: #f4f4ff;
+}
+
+/* ---------- Weather ---------- */
+
+.weather {
+    padding: 80px 0;
+}
+
+.weather-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    max-width: 350px;
+    margin: auto;
+}
+
+.weather-card h3 {
+    color: var(--primary);
+}
+
+.weather-temp {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 20px 0;
+    color: var(--primary);
+}
+
+/* ---------- Itinerary ---------- */
+
+.itinerary {
+    padding: 80px 0;
+    background: var(--surface-light);
+}
+
+.day-card {
+    background: white;
+    border-left: 6px solid var(--primary);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.day-card h3 {
+    color: var(--primary);
+}
+
+/* ---------- Booking CTA ---------- */
+
+.booking {
+    padding: 80px 0;
+}
+
+.booking-box {
+    background: white;
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.booking-buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:992px){
+
+.info-grid{
+grid-template-columns:1fr;
+}
+
+.banner-content h1{
+font-size:2.5rem;
+}
+
+}
+
+@media(max-width:768px){
+
+.destination-banner{
+height:300px;
+}
+
+.banner-content h1{
+font-size:2rem;
+}
+
+.gallery-grid,
+.attraction-grid{
+grid-template-columns:1fr;
+}
+
+.travel-table{
+display:block;
+overflow-x:auto;
+}
+
+.booking-box{
+padding:30px 20px;
+}
+
+}
+
+@media(max-width:480px){
+
+.banner-content h1{
+font-size:1.7rem;
+}
+
+.weather-temp{
+font-size:2.4rem;
+}
+
+.description,
+.quick-info{
+padding:20px;
+}
+
+}

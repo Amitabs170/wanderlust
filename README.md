@@ -1,11 +1,3 @@
-* Project Name: Wanderlust – Travel Destination Guide
-
-* Repository Name: WANDERLUST
-
-* Team Members: Hajara B | Amita
-
-📅 Week 2 & Week 3 Development Plan
-
 ## Day 8 — Build Day 1: Structure & Content
 
 ### 👩‍💻 Amita
@@ -20,6 +12,7 @@
 - Prepare destination data (JSON/JavaScript)
 - Add placeholder images and content
 
+---
 
 ## Day 9 — Build Day 2: Design System & Full Styling
 
@@ -35,6 +28,7 @@
 - Style destination cards
 - Improve responsive design
 
+---
 
 ## Day 10 — Build Day 3: Interactivity
 
@@ -50,6 +44,7 @@
 - Add Search functionality (optional)
 - Connect destination cards to Detail page
 
+---
 
 ## Day 11 — Build Day 4: Live Data & Persistence
 
@@ -63,6 +58,7 @@
 - Display live weather for selected destination
 - Handle loading and error states
 
+---
 
 ## Day 12 — Deployment & Git Collaboration
 
@@ -78,6 +74,7 @@
 - Fix deployment issues
 - Verify API functionality after deployment
 
+---
 
 ## Day 13 — Bug-fix & Polish
 
@@ -93,6 +90,7 @@
 - Fix bugs
 - Optimize performance
 
+---
 
 ## Day 14 — Final Submission
 
@@ -108,6 +106,7 @@
 - Review Git history and commits
 - Assist with final submission
 
+---
 
 # 📌 Responsibilities Summary
 
@@ -125,7 +124,6 @@
 - Final Submission
 
 ---
-
 ## 👩‍💻 Hajara B
 - Destination Listing
 - Destination Cards
@@ -136,4 +134,4 @@
 - Open-Meteo Weather API
 - Deployment
 - Testing & Bug Fixes
-- Performance Optimization
+- Performance Optimization#
