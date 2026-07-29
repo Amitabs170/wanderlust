@@ -1,0 +1,675 @@
+/* ==========================================
+   WANDERLUST - STYLE.CSS (PART 2)
+   Shared Components
+   ========================================== */
+
+/* ==========================================
+   NAVBAR
+   ========================================== */
+
+header{
+    background:var(--surface);
+    box-shadow:var(--shadow-sm);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    font-family:'Poppins',sans-serif;
+    font-size:1.8rem;
+    font-weight:700;
+    color:var(--primary);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.nav-links a{
+    font-weight:600;
+    color:var(--text);
+    transition:var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:var(--primary);
+}
+
+.menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    font-size:2rem;
+    color:var(--primary);
+    cursor:pointer;
+}
+
+/* ==========================================
+   CARD COMPONENTS
+   ========================================== */
+
+.card{
+    background:var(--surface);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+    transition:var(--transition);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-lg);
+}
+
+.card img{
+    width:100%;
+    display:block;
+}
+
+.card-body{
+    padding:20px;
+}
+
+.card-title{
+    margin-bottom:10px;
+}
+
+.card-text{
+    color:var(--text-light);
+}
+
+/* ==========================================
+   TABLES
+   ========================================== */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--surface);
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+}
+
+th{
+    background:var(--primary);
+    color:white;
+    padding:15px;
+    text-align:left;
+}
+
+td{
+    padding:15px;
+    border-bottom:1px solid var(--border);
+}
+
+tr:hover{
+    background:#F6F5FF;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+footer{
+    background:var(--primary);
+    color:white;
+    padding:60px 0 25px;
+}
+
+.footer-content{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.footer-content h3,
+.footer-content h4{
+    color:white;
+    margin-bottom:15px;
+}
+
+.footer-content p{
+    color:#EDEBFF;
+}
+
+.footer-links li{
+    margin-bottom:10px;
+}
+
+.footer-links a{
+    color:#EDEBFF;
+    transition:var(--transition);
+}
+
+.footer-links a:hover{
+    color:white;
+    padding-left:5px;
+}
+
+.social-icons{
+    display:flex;
+    gap:15px;
+    margin-top:15px;
+}
+
+.social-icons a{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:rgba(255,255,255,.15);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:var(--transition);
+}
+
+.social-icons a:hover{
+    background:white;
+    color:var(--primary);
+}
+
+.footer-bottom{
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.2);
+    margin-top:40px;
+    padding-top:20px;
+}
+
+/* ==========================================
+   COMMON HOVER EFFECTS
+   ========================================== */
+
+img{
+    transition:var(--transition);
+}
+
+img:hover{
+    transform:scale(1.02);
+}
+
+a{
+    transition:var(--transition);
+}
+
+button{
+    transition:var(--transition);
+}
+
+input,
+textarea,
+select{
+    transition:var(--transition);
+}
+
+/* ==========================================
+   SCROLLBAR
+   ========================================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#ECEBFF;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--primary);
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:var(--primary-dark);
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+
+.fade-up{
+    animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media(max-width:992px){
+
+    h1{
+        font-size:2.8rem;
+    }
+
+    h2{
+        font-size:2.2rem;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:75px;
+        left:0;
+        width:100%;
+        background:var(--surface);
+        flex-direction:column;
+        gap:20px;
+        padding:25px 0;
+        box-shadow:var(--shadow-md);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .footer-content{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .social-icons{
+        justify-content:center;
+    }
+
+    table{
+        display:block;
+        overflow-x:auto;
+    }
+
+}
+
+@media(max-width:576px){
+
+    h1{
+        font-size:2.2rem;
+    }
+
+    h2{
+        font-size:1.8rem;
+    }
+
+    .navbar{
+        padding:15px 0;
+    }
+
+    .logo{
+        font-size:1.5rem;
+    }
+
+    .btn,
+    .btn-outline{
+        width:100%;
+        text-align:center;
+    }
+
+}
+WANDERLUST - STYLE.CSS (PART 2)
+   Shared Components
+   ========================================== */
+
+/* ==========================================
+   NAVBAR
+   ========================================== */
+
+header{
+    background:var(--surface);
+    box-shadow:var(--shadow-sm);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    font-family:'Poppins',sans-serif;
+    font-size:1.8rem;
+    font-weight:700;
+    color:var(--primary);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.nav-links a{
+    font-weight:600;
+    color:var(--text);
+    transition:var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:var(--primary);
+}
+
+.menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    font-size:2rem;
+    color:var(--primary);
+    cursor:pointer;
+}
+
+/* ==========================================
+   CARD COMPONENTS
+   ========================================== */
+
+.card{
+    background:var(--surface);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+    transition:var(--transition);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-lg);
+}
+
+.card img{
+    width:100%;
+    display:block;
+}
+
+.card-body{
+    padding:20px;
+}
+
+.card-title{
+    margin-bottom:10px;
+}
+
+.card-text{
+    color:var(--text-light);
+}
+
+/* ==========================================
+   TABLES
+   ========================================== */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--surface);
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+}
+
+th{
+    background:var(--primary);
+    color:white;
+    padding:15px;
+    text-align:left;
+}
+
+td{
+    padding:15px;
+    border-bottom:1px solid var(--border);
+}
+
+tr:hover{
+    background:#F6F5FF;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+footer{
+    background:var(--primary);
+    color:white;
+    padding:60px 0 25px;
+}
+
+.footer-content{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.footer-content h3,
+.footer-content h4{
+    color:white;
+    margin-bottom:15px;
+}
+
+.footer-content p{
+    color:#EDEBFF;
+}
+
+.footer-links li{
+    margin-bottom:10px;
+}
+
+.footer-links a{
+    color:#EDEBFF;
+    transition:var(--transition);
+}
+
+.footer-links a:hover{
+    color:white;
+    padding-left:5px;
+}
+
+.social-icons{
+    display:flex;
+    gap:15px;
+    margin-top:15px;
+}
+
+.social-icons a{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:rgba(255,255,255,.15);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:var(--transition);
+}
+
+.social-icons a:hover{
+    background:white;
+    color:var(--primary);
+}
+
+.footer-bottom{
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.2);
+    margin-top:40px;
+    padding-top:20px;
+}
+
+/* ==========================================
+   COMMON HOVER EFFECTS
+   ========================================== */
+
+img{
+    transition:var(--transition);
+}
+
+img:hover{
+    transform:scale(1.02);
+}
+
+a{
+    transition:var(--transition);
+}
+
+button{
+    transition:var(--transition);
+}
+
+input,
+textarea,
+select{
+    transition:var(--transition);
+}
+
+/* ==========================================
+   SCROLLBAR
+   ========================================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#ECEBFF;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--primary);
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:var(--primary-dark);
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+
+.fade-up{
+    animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media(max-width:992px){
+
+    h1{
+        font-size:2.8rem;
+    }
+
+    h2{
+        font-size:2.2rem;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:75px;
+        left:0;
+        width:100%;
+        background:var(--surface);
+        flex-direction:column;
+        gap:20px;
+        padding:25px 0;
+        box-shadow:var(--shadow-md);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .footer-content{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .social-icons{
+        justify-content:center;
+    }
+
+    table{
+        display:block;
+        overflow-x:auto;
+    }
+
+}
+
+@media(max-width:576px){
+
+    h1{
+        font-size:2.2rem;
+    }
+
+    h2{
+        font-size:1.8rem;
+    }
+
+    .navbar{
+        padding:15px 0;
+    }
+
+    .logo{
+        font-size:1.5rem;
+    }
+
+    .btn,
+    .btn-outline{
+        width:100%;
+        text-align:center;
+    }
+
+}
