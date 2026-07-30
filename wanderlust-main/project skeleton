@@ -1,0 +1,31 @@
+wanderlust/
+│
+├── index.html
+├── destinations.html
+├── destination.html
+├── planner.html
+├── README.md
+│
+├── css/
+│   ├── style.css
+│   ├── home.css
+│   ├── destinations.css
+│   ├── detail.css
+│   └── planner.css
+│
+├── js/
+│   ├── app.js
+│   ├── destinations.js
+│   ├── detail.js
+│   ├── planner.js
+│   ├── filters.js
+│   ├── weather.js
+│   └── estimator.js
+│
+├── assets/
+│   ├── images/
+│   ├── icons/
+│   └── models/
+│
+└── data/
+    └── destinations.json
