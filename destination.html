@@ -1,229 +1,195 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wanderlust | Destination Details</title>
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="css/3d-effects.css">
+    <link rel="stylesheet" href="css/travel-vibes.css">
+    <link rel="stylesheet" href="css/mobile.css">
 </head>
-
 <body>
 
-    <header>
+<header>
+    <nav>
+        <h2>🌍 Wanderlust</h2>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="destination.html">Destination Details</a></li>
+            <li><a href="planner.html">Trip Planner</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
 
-        <nav>
+<main>
 
-            <h2>🌍 Wanderlust</h2>
-
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="destinations.html">Destinations</a></li>
-                <li><a href="destination.html">Destination Details</a></li>
-                <li><a href="planner.html">Trip Planner</a></li>
-            </ul>
-
-        </nav>
-
-    </header>
-
-    <main>
-
-        <!-- Destination Banner -->
-
-        <section>
-
-            <h1>Bali, Indonesia</h1>
-
-            <p>
-                Experience tropical beaches, lush rice terraces,
-                waterfalls, temples, and vibrant local culture.
-            </p>
-
-        </section>
-
-        <!-- Image Gallery -->
-
-        <section>
-
-            <h2>Destination Gallery</h2>
-
-            <div>
-
-                <img src="assets/images/bali1.jpg" alt="Bali Beach">
-
-                <img src="assets/images/bali2.jpg" alt="Rice Terrace">
-
-                <img src="assets/images/bali3.jpg" alt="Temple">
-
-                <img src="assets/images/bali4.jpg" alt="Sunset">
-
+    <!-- Banner -->
+    <section class="destination-banner">
+        <img id="bannerImg" src="assets/images/bali.jpg" alt="Destination Banner">
+        <div class="banner-overlay">
+            <div class="banner-content">
+                <h1 id="bannerTitle">Loading...</h1>
+                <p id="bannerSubtitle"></p>
             </div>
+        </div>
+    </section>
 
-        </section>
+    <!-- Overview -->
+    <section class="destination-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="description">
+                    <h2>About This Destination</h2>
+                    <p id="aboutText">Loading destination information...</p>
+                    <h3 style="margin-top:30px">Top Attractions</h3>
+                    <ul id="attractionsList" style="margin-top:10px;padding-left:20px;line-height:2"></ul>
+                </div>
+                <div class="quick-info">
+                    <h3>Quick Info</h3>
+                    <ul>
+                        <li>🌍 <strong>Country:</strong> <span id="infoCountry">--</span></li>
+                        <li>💱 <strong>Currency:</strong> <span id="infoCurrency">--</span></li>
+                        <li>🗣 <strong>Language:</strong> <span id="infoLanguage">--</span></li>
+                        <li>📅 <strong>Recommended Stay:</strong> <span id="infoStay">--</span></li>
+                        <li>☀ <strong>Best Time:</strong> <span id="infoBestTime">--</span></li>
+                        <li>💰 <strong>Est. Cost:</strong> <span id="infoPrice">--</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Overview -->
+    <!-- Image Gallery -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">Destination Gallery</h2>
+            <p class="section-subtitle">Click any photo to view full size.</p>
+            <div class="gallery-grid" id="gallery">
+                <!-- Populated by detail.js -->
+            </div>
+        </div>
+    </section>
 
-        <section>
-
-            <h2>About Bali</h2>
-
-            <p>
-                Bali is one of Indonesia's most famous tourist destinations,
-                known for its beautiful beaches, rich traditions,
-                exciting nightlife, and adventure activities.
-            </p>
-
-        </section>
-
-        <!-- Highlights -->
-
-        <section>
-
-            <h2>Top Attractions</h2>
-
-            <ul>
-
-                <li>🏝 Kuta Beach</li>
-
-                <li>🌾 Tegallalang Rice Terrace</li>
-
-                <li>🛕 Uluwatu Temple</li>
-
-                <li>🌊 Tegenungan Waterfall</li>
-
-                <li>🐒 Sacred Monkey Forest</li>
-
-            </ul>
-
-        </section>
-
-        <!-- Best Time -->
-
-        <section>
-
-            <h2>Best Time to Visit</h2>
-
-            <p>
-                April to October offers pleasant weather,
-                making it ideal for sightseeing and outdoor adventures.
-            </p>
-
-        </section>
-
-        <!-- Trip Information -->
-
-        <section>
-
-            <h2>Trip Information</h2>
-
-            <table border="1">
-
-                <tr>
-                    <th>Country</th>
-                    <td>Indonesia</td>
-                </tr>
-
-                <tr>
-                    <th>Currency</th>
-                    <td>Indonesian Rupiah (IDR)</td>
-                </tr>
-
-                <tr>
-                    <th>Language</th>
-                    <td>Indonesian</td>
-                </tr>
-
-                <tr>
-                    <th>Recommended Stay</th>
-                    <td>5–7 Days</td>
-                </tr>
-
+    <!-- Travel Information -->
+    <section class="travel-info">
+        <div class="container">
+            <h2 class="section-title">Trip Information</h2>
+            <table class="travel-table">
+                <tr><th>Country</th><td id="tblCountry">--</td></tr>
+                <tr><th>Currency</th><td id="tblCurrency">--</td></tr>
+                <tr><th>Language</th><td id="tblLanguage">--</td></tr>
+                <tr><th>Recommended Stay</th><td id="tblStay">--</td></tr>
+                <tr><th>Best Time to Visit</th><td id="tblBestTime">--</td></tr>
+                <tr><th>Estimated Cost</th><td id="tblPrice">--</td></tr>
             </table>
+        </div>
+    </section>
 
-        </section>
+    <!-- Live Weather -->
+    <section class="weather">
+        <div class="container">
+            <h2 class="section-title">Current Weather</h2>
+            <div class="weather-card">
+                <h3 id="weatherDestName">Loading...</h3>
+                <div class="weather-temp" id="weatherTemp">--</div>
+                <p id="weatherCondition">Fetching live data...</p>
+                <p>💨 Wind Speed: <strong id="weatherWind">--</strong> km/h</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- Weather Preview -->
-
-        <section>
-
-            <h2>Current Weather</h2>
-
-            <p>Temperature: -- °C</p>
-
-            <p>Condition: Loading...</p>
-
-            <p>Wind Speed: -- km/h</p>
-
-        </section>
-
-        <!-- Itinerary -->
-
-        <section>
-
-            <h2>Suggested Itinerary</h2>
-
-            <ol>
-
-                <li>Day 1 Arrival & Beach Visit</li>
-
-                <li>Day 2 Rice Terraces & Waterfalls</li>
-
-                <li>Day 3 Temples & Cultural Tour</li>
-
-                <li>Day 4 Adventure Activities</li>
-
-                <li>Day 5 Shopping & Departure</li>
-
+    <!-- Suggested Itinerary -->
+    <section class="itinerary">
+        <div class="container">
+            <h2 class="section-title">Suggested Itinerary</h2>
+            <ol id="itineraryList" style="padding-left:0;list-style:none">
+                <!-- Populated by detail.js -->
             </ol>
+        </div>
+    </section>
 
-        </section>
+    <!-- CTA -->
+    <section class="booking">
+        <div class="container">
+            <div class="booking-box">
+                <h2>Ready to Visit?</h2>
+                <p>Plan your itinerary and estimate your travel expenses with our Trip Planner.</p>
+                <div class="booking-buttons">
+                    <a href="planner.html" class="btn" id="planLink">Plan This Trip</a>
+                    <a href="destinations.html" class="btn-outline">Browse More</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- CTA -->
+</main>
 
-        <section>
-
-            <h2>Ready to Visit Bali?</h2>
-
-            <p>
-                Plan your itinerary and estimate your travel expenses with our Trip Planner.
-            </p>
-
-            <a href="planner.html">
-
-                <button>
-                    Plan This Trip
-                </button>
-
-            </a>
-
-        </section>
-
-    </main>
-
-    <footer>
-
+<footer>
+    <div class="container">
         <p>© 2026 Wanderlust. All Rights Reserved.</p>
-
         <nav>
-
             <a href="index.html">Home</a> |
-
             <a href="destinations.html">Destinations</a> |
-
             <a href="destination.html">Destination Details</a> |
-
             <a href="planner.html">Trip Planner</a>
-
         </nav>
+    </div>
+</footer>
 
-    </footer>
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <img id="lightboxImg" src="" alt="Gallery Image">
+    </div>
+</div>
 
-    <script src="js/detail.js"></script>
-    <script src="js/weather.js"></script>
+<script src="js/weather.js"></script>
+<script src="js/detail.js"></script>
+<script src="js/3d-effects.js"></script>
+<script>
+  /* Mirror quick-info into travel table after detail.js populates IDs */
+  document.addEventListener('DOMContentLoaded', () => {
+    const mirror = [
+      ['infoCountry','tblCountry'], ['infoCurrency','tblCurrency'],
+      ['infoLanguage','tblLanguage'], ['infoStay','tblStay'],
+      ['infoBestTime','tblBestTime'], ['infoPrice','tblPrice']
+    ];
+    const sync = () => mirror.forEach(([src, dst]) => {
+      const val = document.getElementById(src)?.textContent;
+      if (val && val !== '--') document.getElementById(dst).textContent = val;
+    });
+    setTimeout(sync, 800);
+  });
+</script>
 
+<script>
+  /* Mobile nav toggle */
+  (function() {
+    var toggle = document.getElementById('navToggle');
+    var links  = document.getElementById('navLinks');
+    if (!toggle || !links) return;
+    toggle.addEventListener('click', function() {
+      var open = links.classList.toggle('mobile-open');
+      toggle.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    links.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A') {
+        links.classList.remove('mobile-open');
+        toggle.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  })();
+</script>
 </body>
-
 </html>
+

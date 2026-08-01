@@ -1,234 +1,228 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wanderlust | Home</title>
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/3d-effects.css">
+    <link rel="stylesheet" href="css/travel-vibes.css">
+    <link rel="stylesheet" href="css/mobile.css">
 </head>
+<body class="home-page">
 
-<body>
-
-<header>
+<header id="mainHeader">
     <nav>
-        <h2>🌍 Wanderlust</h2>
-
-        <ul>
+        <h2>&#127758; Wanderlust</h2>
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="destinations.html">Destinations</a></li>
-            <li><a href="destination.html">Destination Details</a></li>
+            <li><a href="destination.html">Details</a></li>
             <li><a href="planner.html">Trip Planner</a></li>
         </ul>
+        <div class="nav-actions">
+            <a href="planner.html" class="nav-cta-btn">Plan a Trip</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 </header>
 
 <main>
 
-    <!-- Hero Section -->
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
 
-    <section id="hero">
-
-        <div>
-
-            <h1>Discover Your Next Adventure</h1>
-
-            <p>
-                Explore breathtaking destinations, plan unforgettable trips,
-                estimate your travel budget, and check live weather—all in one place.
-            </p>
-
-            <a href="destinations.html">
-                Explore Destinations
-            </a>
-
+        <!-- CSS tropical scene layers -->
+        <div class="sky-clouds" aria-hidden="true">
+            <div class="cloud cl1"></div>
+            <div class="cloud cl2"></div>
+            <div class="cloud cl3"></div>
+            <div class="cloud cl4"></div>
         </div>
 
-        <div>
+        <!-- Distant island silhouettes at horizon -->
+        <svg class="scene-mountains" viewBox="0 0 1440 80" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+            <ellipse cx="580"  cy="55" rx="220" ry="32" fill="#00546a" opacity="0.55"/>
+            <ellipse cx="980"  cy="58" rx="140" ry="22" fill="#00546a" opacity="0.45"/>
+            <ellipse cx="200"  cy="62" rx="90"  ry="16" fill="#00546a" opacity="0.40"/>
+            <ellipse cx="1280" cy="60" rx="110" ry="18" fill="#00546a" opacity="0.38"/>
+        </svg>
 
-            <!-- 3D Model Placeholder -->
+        <div class="scene-ocean" aria-hidden="true"></div>
+        <div class="scene-horizon" aria-hidden="true"></div>
+        <div class="hero-overlay"></div>
 
-            <img src="assets/images/travel-hero.png"
-                alt="3D Travel Illustration">
-
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-eyebrow">Tropical Escapes &amp; Beyond</p>
+                <h1>Discover Your Next<br>Adventure. Worldwide.</h1>
+                <p class="hero-sub">
+                    Explore breathtaking destinations, plan unforgettable trips,
+                    estimate your travel budget, and check live weather&mdash;all in one place.
+                </p>
+                <div class="hero-buttons">
+                    <a href="destinations.html" class="btn">Explore Destinations</a>
+                    <a href="planner.html" class="btn-outline">Plan My Trip</a>
+                </div>
+            </div>
         </div>
-
+        <div class="scroll-hint" aria-hidden="true">
+            <div class="scroll-dot"></div>
+        </div>
     </section>
 
+    <!-- Stats bar -->
+    <div class="stats-bar">
+        <div class="container">
+            <div class="stat-item">
+                <strong data-target="6">6+</strong>
+                <span>Destinations</span>
+            </div>
+            <div class="stat-item">
+                <strong data-target="12400">12K+</strong>
+                <span>Happy Travellers</span>
+            </div>
+            <div class="stat-item">
+                <strong>4.9 &#9733;</strong>
+                <span>Average Rating</span>
+            </div>
+            <div class="stat-item">
+                <strong>100%</strong>
+                <span>Satisfaction</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scrolling destination ticker -->
+    <div class="travel-ticker" aria-hidden="true">
+        <div class="ticker-track">
+            <span class="ticker-item">&#9992; PARIS<span class="ticker-dot"></span></span>
+            <span class="ticker-item">&#127965; BALI<span class="ticker-dot"></span></span>
+            <span class="ticker-item">&#127958; MALDIVES<span class="ticker-dot"></span></span>
+            <span class="ticker-item">&#127956; MANALI<span class="ticker-dot"></span></span>
+            <span class="ticker-item">&#127962; DUBAI<span class="ticker-dot"></span></span>
+            <span class="ticker-item">&#9968; SWITZERLAND<span class="ticker-dot"></span></span>
+            <span class="ticker-item">&#9992; PARIS<span class="ticker-dot"></span></span>
+            <span class="ticker-item">&#127965; BALI<span class="ticker-dot"></span></span>
+            <span class="ticker-item">&#127958; MALDIVES<span class="ticker-dot"></span></span>
+            <span class="ticker-item">&#127956; MANALI<span class="ticker-dot"></span></span>
+            <span class="ticker-item">&#127962; DUBAI<span class="ticker-dot"></span></span>
+            <span class="ticker-item">&#9968; SWITZERLAND<span class="ticker-dot"></span></span>
+        </div>
+    </div>
+
     <!-- Featured Destinations -->
-
-    <section>
-
-        <h2>Featured Destinations</h2>
-
-        <article>
-
-            <h3>Maldives</h3>
-
-            <p>
-                Crystal-clear waters, luxury resorts, and unforgettable sunsets.
-            </p>
-
-        </article>
-
-        <article>
-
-            <h3>Paris</h3>
-
-            <p>
-                Experience iconic landmarks, romantic streets, and world-class cuisine.
-            </p>
-
-        </article>
-
-        <article>
-
-            <h3>Bali</h3>
-
-            <p>
-                Discover tropical beaches, temples, and cultural experiences.
-            </p>
-
-        </article>
-
+    <section class="featured">
+        <div class="container">
+            <h2 class="section-title">Featured Destinations</h2>
+            <p class="section-subtitle">Hand-picked destinations for every type of traveller.</p>
+            <div class="destination-grid" id="featuredGrid">
+                <article class="destination-card">
+                    <div class="destination-content"><h3>Loading...</h3></div>
+                </article>
+            </div>
+        </div>
     </section>
 
     <!-- Travel Categories -->
-
-    <section>
-
-        <h2>Travel Categories</h2>
-
-        <ul>
-
-            <li>🏖 Beach Holidays</li>
-
-            <li>⛰ Mountain Adventures</li>
-
-            <li>🏙 City Escapes</li>
-
-            <li>🌿 Nature & Wildlife</li>
-
-            <li>🎒 Backpacking Trips</li>
-
-            <li>💎 Luxury Vacations</li>
-
-        </ul>
-
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Travel Categories</h2>
+            <p class="section-subtitle">Find the trip that matches your style.</p>
+            <div class="category-grid">
+                <div class="category-card"><div style="font-size:2.5rem;margin-bottom:15px">&#127958;</div><h3>Beach Holidays</h3><p>Sun, sand, and sea await you.</p></div>
+                <div class="category-card"><div style="font-size:2.5rem;margin-bottom:15px">&#9968;</div><h3>Mountain Adventures</h3><p>Conquer peaks and breathe fresh air.</p></div>
+                <div class="category-card"><div style="font-size:2.5rem;margin-bottom:15px">&#127961;</div><h3>City Escapes</h3><p>Explore vibrant urban cultures.</p></div>
+                <div class="category-card"><div style="font-size:2.5rem;margin-bottom:15px">&#127807;</div><h3>Nature &amp; Wildlife</h3><p>Connect with the natural world.</p></div>
+                <div class="category-card"><div style="font-size:2.5rem;margin-bottom:15px">&#127953;</div><h3>Backpacking Trips</h3><p>Travel light and explore more.</p></div>
+                <div class="category-card"><div style="font-size:2.5rem;margin-bottom:15px">&#128142;</div><h3>Luxury Vacations</h3><p>Indulge in world-class comfort.</p></div>
+            </div>
+        </div>
     </section>
 
     <!-- Why Choose Wanderlust -->
-
-    <section>
-
-        <h2>Why Choose Wanderlust?</h2>
-
-        <article>
-
-            <h3>Easy Trip Planning</h3>
-
-            <p>
-                Plan your entire journey with our simple planner.
-            </p>
-
-        </article>
-
-        <article>
-
-            <h3>Budget Estimation</h3>
-
-            <p>
-                Estimate your travel expenses before booking.
-            </p>
-
-        </article>
-
-        <article>
-
-            <h3>Live Weather</h3>
-
-            <p>
-                Check real-time weather using Open-Meteo API.
-            </p>
-
-        </article>
-
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Wanderlust?</h2>
+            <p class="section-subtitle">Everything you need to plan the perfect trip.</p>
+            <div class="feature-grid">
+                <div class="feature-card"><div style="font-size:3rem;color:var(--primary);margin-bottom:20px">&#128506;</div><h3>Easy Trip Planning</h3><p>Plan your entire journey with our simple, intuitive planner.</p></div>
+                <div class="feature-card"><div style="font-size:3rem;color:var(--primary);margin-bottom:20px">&#128176;</div><h3>Budget Estimation</h3><p>Estimate travel expenses before booking anything.</p></div>
+                <div class="feature-card"><div style="font-size:3rem;color:var(--primary);margin-bottom:20px">&#127780;</div><h3>Live Weather</h3><p>Check real-time weather via Open-Meteo API before you go.</p></div>
+                <div class="feature-card"><div style="font-size:3rem;color:var(--primary);margin-bottom:20px">&#128269;</div><h3>Smart Filters</h3><p>Filter destinations by budget, type, and travel style.</p></div>
+            </div>
+        </div>
     </section>
 
-    <!-- Plan Your Trip -->
-
-    <section>
-
-        <h2>Ready to Travel?</h2>
-
-        <p>
-            Start planning your dream vacation today.
-        </p>
-
-        <a href="planner.html">
-            Plan My Trip
-        </a>
-
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Travel?</h2>
+            <p>Start planning your dream vacation today. Your next adventure awaits.</p>
+            <a href="planner.html" class="btn" style="background:white;color:var(--primary);">Plan My Trip</a>
+        </div>
     </section>
 
     <!-- Newsletter -->
-
-    <section>
-
-        <h2>Stay Updated</h2>
-
-        <form>
-
-            <label for="name">
-                Full Name
-            </label>
-
-            <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your name">
-
-            <label for="email">
-                Email Address
-            </label>
-
-            <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email">
-
-            <button type="submit">
-                Subscribe
-            </button>
-
-        </form>
-
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-box">
+                <h2>Stay Updated</h2>
+                <p>Subscribe for the latest travel deals, tips, and destination guides.</p>
+                <form id="newsletterForm">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
     </section>
 
 </main>
 
 <footer>
-
-    <p>© 2026 Wanderlust. All Rights Reserved.</p>
-
-    <nav>
-
-        <a href="index.html">Home</a> |
-
-        <a href="destinations.html">Destinations</a> |
-
-        <a href="destination.html">Destination Details</a> |
-
-        <a href="planner.html">Trip Planner</a>
-
-    </nav>
-
+    <div class="container">
+        <p>&copy; 2026 Wanderlust. All Rights Reserved.</p>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="destinations.html">Destinations</a> |
+            <a href="destination.html">Destination Details</a> |
+            <a href="planner.html">Trip Planner</a>
+        </nav>
+    </div>
 </footer>
 
 <script src="js/app.js"></script>
+<script src="js/3d-effects.js"></script>
+<script>
+  /* Transparent-to-solid nav on scroll */
+  const hdr = document.getElementById('mainHeader');
+  window.addEventListener('scroll', () => {
+    hdr.classList.toggle('nav-solid', window.scrollY > 60);
+  }, { passive: true });
+
+  /* Mobile nav toggle */
+  (function() {
+    var toggle = document.getElementById('navToggle');
+    var links  = document.getElementById('navLinks');
+    if (!toggle || !links) return;
+    toggle.addEventListener('click', function() {
+      var open = links.classList.toggle('mobile-open');
+      toggle.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    links.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A') {
+        links.classList.remove('mobile-open');
+        toggle.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  })();
+</script>
 
 </body>
 </html>

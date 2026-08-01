@@ -1,221 +1,152 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wanderlust | Destinations</title>
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/destinations.css">
+    <link rel="stylesheet" href="css/3d-effects.css">
+    <link rel="stylesheet" href="css/travel-vibes.css">
+    <link rel="stylesheet" href="css/mobile.css">
 </head>
-
 <body>
 
 <header>
     <nav>
         <h2>🌍 Wanderlust</h2>
-
-        <ul>
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="destinations.html">Destinations</a></li>
             <li><a href="destination.html">Destination Details</a></li>
             <li><a href="planner.html">Trip Planner</a></li>
         </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 </header>
 
 <main>
 
-    <section>
-
-        <h1>Explore Destinations</h1>
-
-        <p>
-            Browse destinations based on your budget, interests, and travel style.
-        </p>
-
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Explore Destinations</h1>
+            <p>Browse destinations based on your budget, interests, and travel style.</p>
+        </div>
     </section>
 
     <!-- Search -->
-
-    <section>
-
-        <h2>Search Destination</h2>
-
-        <form>
-
-            <label for="search">
-                Destination Name
-            </label>
-
-            <input
-                type="text"
-                id="search"
-                name="search"
-                placeholder="Search destinations">
-
-            <button type="submit">
-                Search
-            </button>
-
-        </form>
-
+    <section class="search-section">
+        <div class="container">
+            <form class="search-box" id="searchForm">
+                <input type="text" id="search" placeholder="Search by name or country..." autocomplete="off">
+                <button type="submit" class="btn">Search</button>
+            </form>
+        </div>
     </section>
 
-    <!-- Budget Filters -->
+    <!-- Filters -->
+    <section class="filters-section">
+        <div class="container">
 
-    <section>
+            <div class="filter-group">
+                <span class="filter-label">💰 Budget</span>
+                <button class="chip budget-filter active" data-budget="All">All</button>
+                <button class="chip budget-filter" data-budget="Budget Friendly">Budget Friendly</button>
+                <button class="chip budget-filter" data-budget="Mid Range">Mid Range</button>
+                <button class="chip budget-filter" data-budget="Luxury">Luxury</button>
+            </div>
 
-        <h2>Budget</h2>
+            <div class="filter-group">
+                <span class="filter-label">🗺 Type</span>
+                <button class="chip type-filter active" data-type="All">All</button>
+                <button class="chip type-filter" data-type="Beach">Beach</button>
+                <button class="chip type-filter" data-type="Mountain">Mountain</button>
+                <button class="chip type-filter" data-type="City">City</button>
+                <button class="chip type-filter" data-type="Nature">Nature</button>
+                <button class="chip type-filter" data-type="Adventure">Adventure</button>
+            </div>
 
-        <button>Budget Friendly</button>
-        <button>Mid Range</button>
-        <button>Luxury</button>
-
-    </section>
-
-    <!-- Destination Type -->
-
-    <section>
-
-        <h2>Destination Type</h2>
-
-        <button>Beach</button>
-        <button>Mountain</button>
-        <button>City</button>
-        <button>Nature</button>
-        <button>Adventure</button>
-
+        </div>
     </section>
 
     <!-- Destination Cards -->
-
-    <section>
-
-        <h2>Popular Destinations</h2>
-
-        <article>
-
-            <img src="assets/images/paris.jpg" alt="Paris">
-
-            <h3>Paris</h3>
-
-            <p>France</p>
-
-            <p>Budget: Luxury</p>
-
-            <a href="destination.html">View Details</a>
-
-        </article>
-
-        <article>
-
-            <img src="assets/images/bali.jpg" alt="Bali">
-
-            <h3>Bali</h3>
-
-            <p>Indonesia</p>
-
-            <p>Budget: Mid Range</p>
-
-            <a href="destination.html">View Details</a>
-
-        </article>
-
-        <article>
-
-            <img src="assets/images/maldives.jpg" alt="Maldives">
-
-            <h3>Maldives</h3>
-
-            <p>Maldives</p>
-
-            <p>Budget: Luxury</p>
-
-            <a href="destination.html">View Details</a>
-
-        </article>
-
-        <article>
-
-            <img src="assets/images/manali.jpg" alt="Manali">
-
-            <h3>Manali</h3>
-
-            <p>India</p>
-
-            <p>Budget: Budget Friendly</p>
-
-            <a href="destination.html">View Details</a>
-
-        </article>
-
-        <article>
-
-            <img src="assets/images/dubai.jpg" alt="Dubai">
-
-            <h3>Dubai</h3>
-
-            <p>UAE</p>
-
-            <p>Budget: Luxury</p>
-
-            <a href="destination.html">View Details</a>
-
-        </article>
-
-        <article>
-
-            <img src="assets/images/swiss.jpg" alt="Switzerland">
-
-            <h3>Switzerland</h3>
-
-            <p>Europe</p>
-
-            <p>Budget: Luxury</p>
-
-            <a href="destination.html">View Details</a>
-
-        </article>
-
+    <section class="destinations-section">
+        <div class="container">
+            <h2 class="section-title">Popular Destinations</h2>
+            <div class="destination-grid" id="destinationGrid">
+                <!-- Populated by destinations.js -->
+                <p style="grid-column:1/-1;text-align:center;padding:40px;color:var(--text-light)">Loading destinations...</p>
+            </div>
+        </div>
     </section>
 
     <!-- Live Weather Preview -->
-
-    <section>
-
-        <h2>Live Weather Preview</h2>
-
-        <p><strong>Destination:</strong> Bali</p>
-
-        <p>Temperature: -- °C</p>
-
-        <p>Weather: Loading...</p>
-
-        <p>Wind Speed: -- km/h</p>
-
+    <section class="weather-preview">
+        <div class="container">
+            <h2 class="section-title">Live Weather Preview</h2>
+            <p class="section-subtitle">Current conditions in Bali, Indonesia</p>
+            <div class="weather-preview-card">
+                <p>🌡 Temperature</p>
+                <div class="weather-temp" id="weatherTemp">--</div>
+                <p id="weatherCondition">Loading...</p>
+                <p>💨 Wind: <strong id="weatherWind">--</strong> km/h</p>
+            </div>
+        </div>
     </section>
 
 </main>
 
 <footer>
-
-    <p>© 2026 Wanderlust. All Rights Reserved.</p>
-
-    <nav>
-
-        <a href="index.html">Home</a> |
-        <a href="destinations.html">Destinations</a> |
-        <a href="destination.html">Destination Details</a> |
-        <a href="planner.html">Trip Planner</a>
-
-    </nav>
-
+    <div class="container">
+        <p>© 2026 Wanderlust. All Rights Reserved.</p>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="destinations.html">Destinations</a> |
+            <a href="destination.html">Destination Details</a> |
+            <a href="planner.html">Trip Planner</a>
+        </nav>
+    </div>
 </footer>
 
+<script src="js/weather.js"></script>
 <script src="js/destinations.js"></script>
 <script src="js/filters.js"></script>
-<script src="js/weather.js"></script>
+<script src="js/3d-effects.js"></script>
+<script>
+  /* Show Bali weather in the preview panel */
+  fetchWeather(-8.3405, 115.0920).then(w => {
+    document.getElementById('weatherTemp').textContent = w.temp + ' °C';
+    document.getElementById('weatherCondition').textContent = w.condition;
+    document.getElementById('weatherWind').textContent = w.wind;
+  }).catch(() => {
+    document.getElementById('weatherCondition').textContent = 'Unavailable';
+  });
+</script>
 
+<script>
+  /* Mobile nav toggle */
+  (function() {
+    var toggle = document.getElementById('navToggle');
+    var links  = document.getElementById('navLinks');
+    if (!toggle || !links) return;
+    toggle.addEventListener('click', function() {
+      var open = links.classList.toggle('mobile-open');
+      toggle.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    links.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A') {
+        links.classList.remove('mobile-open');
+        toggle.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  })();
+</script>
 </body>
 </html>
+

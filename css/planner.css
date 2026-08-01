@@ -1,0 +1,157 @@
+﻿/* ==========================================
+   TRIP PLANNER PAGE
+   planner.css
+   ========================================== */
+
+/* ---------- Page Header ---------- */
+
+.page-header {
+    padding: 60px 0 40px;
+    background: linear-gradient(135deg, #f8f9ff, #ede9ff);
+    text-align: center;
+}
+
+.page-header h1 { color: var(--primary); }
+
+/* ---------- Planner Layout ---------- */
+
+.planner-section {
+    padding: 60px 0;
+}
+
+.planner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* ---------- Form Cards ---------- */
+
+.form-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow-md);
+}
+
+.form-card h2 {
+    color: var(--primary);
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--accent);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+}
+
+/* ---------- Trip Summary ---------- */
+
+.trip-summary {
+    display: none;
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow-md);
+    border-top: 6px solid var(--primary);
+}
+
+.trip-summary h2 { color: var(--primary); margin-bottom: 25px; }
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.summary-row:last-child { border-bottom: none; }
+
+.summary-label { font-weight: 700; color: var(--text-light); }
+.summary-value { font-weight: 600; color: var(--text); }
+
+/* ---------- Cost Estimator ---------- */
+
+.estimator-section {
+    padding: 60px 0;
+    background: var(--surface-light);
+}
+
+.estimator-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* ---------- Budget Result ---------- */
+
+.budget-result {
+    display: none;
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow-md);
+}
+
+.budget-result h2 { color: var(--primary); margin-bottom: 25px; }
+
+.budget-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.budget-row:last-child {
+    border-bottom: none;
+    font-size: 1.2rem;
+}
+
+.budget-total {
+    font-weight: 800;
+    color: var(--primary);
+    font-size: 1.4rem;
+}
+
+/* ---------- Travel Tips ---------- */
+
+.tips-section { padding: 60px 0; }
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.tip-card {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 25px;
+    box-shadow: var(--shadow-sm);
+    border-left: 5px solid var(--primary);
+    transition: var(--transition);
+}
+
+.tip-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+.tip-icon { font-size: 1.8rem; margin-bottom: 10px; }
+
+/* ---------- Responsive ---------- */
+
+@media(max-width: 992px) {
+    .planner-grid,
+    .estimator-grid { grid-template-columns: 1fr; }
+}
+
+@media(max-width: 600px) {
+    .form-card,
+    .trip-summary,
+    .budget-result { padding: 25px 20px; }
+    .form-row { grid-template-columns: 1fr; }
+}

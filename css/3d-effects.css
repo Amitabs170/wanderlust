@@ -1,0 +1,268 @@
+﻿/* ==========================================
+   3D EFFECTS — 3d-effects.css
+   ========================================== */
+
+/* ==========================================
+   SCROLL REVEAL — 3D entrance
+   ========================================== */
+
+.reveal-3d {
+  opacity: 0;
+  transform: perspective(900px) translateZ(-80px) translateY(40px);
+  transition: opacity 0.65s ease var(--delay,0s),
+              transform 0.65s cubic-bezier(0.23,1,0.32,1) var(--delay,0s);
+}
+.reveal-3d.revealed {
+  opacity: 1;
+  transform: perspective(900px) translateZ(0) translateY(0);
+}
+
+/* ==========================================
+   DESTINATION CARD — 3D tilt + depth
+   ========================================== */
+
+.destination-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.destination-card img {
+  transform: translateZ(8px) scale(1.01);
+  transition: transform 0.4s ease;
+}
+.destination-card:hover img {
+  transform: translateZ(20px) scale(1.04);
+}
+.destination-card .destination-content {
+  transform: translateZ(5px);
+}
+
+/* ==========================================
+   HERO — 3D Destination Card Showcase
+   ========================================== */
+
+.showcase-scene {
+  perspective: 1400px;
+  width: 380px;
+  height: 440px;
+  position: relative;
+  transform-style: preserve-3d;
+  margin: auto;
+}
+
+/* Individual floating cards */
+.showcase-card {
+  position: absolute;
+  width: 220px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.22);
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.23,1,0.32,1);
+  cursor: pointer;
+}
+.showcase-card:hover {
+  transform: var(--hover-t) !important;
+  z-index: 10;
+}
+
+/* Card background images (gradient stands in for real photos) */
+.sc-img {
+  height: 145px;
+  width: 100%;
+}
+.sc-img1 { background: linear-gradient(135deg,#667eea 0%,#764ba2 100%); }
+.sc-img2 { background: linear-gradient(135deg,#43e97b 0%,#38f9d7 100%); }
+.sc-img3 { background: linear-gradient(135deg,#4facfe 0%,#00f2fe 100%); }
+.sc-img4 { background: linear-gradient(135deg,#f093fb 0%,#f5576c 100%); }
+
+/* Overlay shimmer on card image */
+.sc-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(255,255,255,0.18) 0%, transparent 60%);
+}
+
+.sc-meta {
+  padding: 14px 16px 6px;
+  transform-style: preserve-3d;
+}
+.sc-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--primary);
+  font-size: .7rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 50px;
+  margin-bottom: 6px;
+}
+.sc-meta h4 {
+  font-size: 1.05rem;
+  margin-bottom: 2px;
+  color: var(--text);
+  transform: translateZ(6px);
+}
+.sc-meta p {
+  font-size: .78rem;
+  color: var(--text-light);
+  margin-bottom: 0;
+}
+.sc-price {
+  padding: 8px 16px 14px;
+  font-weight: 800;
+  color: var(--primary);
+  font-size: .95rem;
+}
+
+/* Card positions in 3D space */
+.sc1 {
+  top: 10px; left: 50%; transform: translateX(-50%) rotateY(-18deg) rotateX(6deg) translateZ(60px);
+  --hover-t: translateX(-50%) rotateY(-18deg) rotateX(6deg) translateZ(90px) scale(1.04);
+  z-index: 4;
+}
+.sc2 {
+  top: 80px; left: 5%; transform: rotateY(8deg) rotateX(-4deg) translateZ(20px);
+  --hover-t: rotateY(8deg) rotateX(-4deg) translateZ(60px) scale(1.04);
+  z-index: 3;
+}
+.sc3 {
+  top: 180px; left: 40%; transform: translateX(-30%) rotateY(-10deg) rotateX(4deg) translateZ(0px);
+  --hover-t: translateX(-30%) rotateY(-10deg) rotateX(4deg) translateZ(40px) scale(1.04);
+  z-index: 2;
+}
+.sc4 {
+  top: 60px; right: 0; transform: rotateY(20deg) rotateX(8deg) translateZ(-30px);
+  --hover-t: rotateY(20deg) rotateX(8deg) translateZ(20px) scale(1.04);
+  z-index: 1;
+  opacity: 0.85;
+}
+
+/* Floating accent tags */
+.sc-accent {
+  position: absolute;
+  background: white;
+  border-radius: 50px;
+  padding: 8px 14px;
+  font-size: .82rem;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+  white-space: nowrap;
+  animation: floatChip 3s ease-in-out infinite;
+  z-index: 20;
+}
+.ac1 { top: -12px; right: 20px;  animation-delay: 0s;   font-size: 1.6rem; background: transparent; box-shadow: none; }
+.ac2 { bottom: 10px; right: -10px; animation-delay: 1s; color: var(--primary); }
+.ac3 { bottom: 60px; left: -5px;  animation-delay: 1.8s; color: var(--success); }
+
+/* ==========================================
+   HERO SECTION — 3D bg blobs + depth
+   ========================================== */
+
+.hero {
+  overflow: hidden;
+  position: relative;
+}
+.hero-3d-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-3d-bg .blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.16;
+  filter: blur(65px);
+  animation: blobFloat 9s ease-in-out infinite;
+}
+.blob1 { width:380px; height:380px; background:var(--primary); top:-100px; right:2%;   animation-delay:0s; }
+.blob2 { width:270px; height:270px; background:#9f94ff;         bottom:0;   right:28%;  animation-delay:2.5s; }
+.blob3 { width:220px; height:220px; background:#D8D4FF;         top:35%;    left:2%;    animation-delay:5s; }
+.hero .container { position: relative; z-index: 1; }
+
+/* ==========================================
+   FEATURE / CATEGORY / TIP CARDS
+   ========================================== */
+
+.feature-card,
+.category-card,
+.tip-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.3s cubic-bezier(0.23,1,0.32,1), box-shadow 0.3s ease;
+}
+.feature-card:hover   { transform: perspective(800px) rotateX(-6deg) translateZ(12px); }
+.category-card:hover  { transform: perspective(800px) rotateX(-8deg) rotateY(4deg) translateZ(10px) !important; }
+.tip-card:hover       { transform: perspective(800px) rotateY(-6deg) translateZ(10px); }
+
+/* ==========================================
+   WEATHER / FORM CARDS
+   ========================================== */
+
+.weather-card {
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+}
+.weather-card:hover {
+  transform: perspective(800px) rotateX(-5deg) rotateY(3deg) translateZ(8px);
+}
+.form-card {
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.form-card:hover {
+  transform: perspective(1000px) rotateX(-3deg) translateZ(6px);
+  box-shadow: 0 20px 50px rgba(108,99,255,0.18);
+}
+
+/* ==========================================
+   BANNER — detail page parallax depth
+   ========================================== */
+
+.destination-banner { transform-style: preserve-3d; }
+.banner-content {
+  transform: translateZ(40px);
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+/* ==========================================
+   KEYFRAMES
+   ========================================== */
+
+@keyframes floatChip {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-9px); }
+}
+@keyframes blobFloat {
+  0%,100% { transform: scale(1) translate(0,0); }
+  33%      { transform: scale(1.12) translate(22px,-18px); }
+  66%      { transform: scale(0.94) translate(-12px,12px); }
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media(max-width: 900px) {
+  .showcase-scene { width:300px; height:360px; }
+  .showcase-card  { width:180px; }
+  .sc-img         { height:115px; }
+  .sc-accent      { display:none; }
+}
+@media(max-width: 768px) {
+  .showcase-scene { display:none; }
+  .reveal-3d {
+    transform: translateY(30px);
+    transition: opacity 0.5s ease var(--delay,0s), transform 0.5s ease var(--delay,0s);
+  }
+  .feature-card:hover,
+  .category-card:hover,
+  .tip-card:hover { transform: translateY(-6px); }
+}
+@media(prefers-reduced-motion: reduce) {
+  .sc-accent, .blob { animation: none !important; }
+  .reveal-3d        { transition: none !important; }
+}

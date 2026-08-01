@@ -1,0 +1,199 @@
+﻿/* ==========================================
+   DESTINATIONS PAGE
+   destinations.css
+   ========================================== */
+
+/* ---------- Page Header ---------- */
+
+.page-header {
+    padding: 60px 0 40px;
+    background: linear-gradient(135deg, #f8f9ff, #ede9ff);
+    text-align: center;
+}
+
+.page-header h1 { color: var(--primary); }
+
+/* ---------- Search ---------- */
+
+.search-section {
+    padding: 40px 0 20px;
+}
+
+.search-box {
+    display: flex;
+    gap: 12px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.search-box input {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.search-box .btn { white-space: nowrap; }
+
+/* ---------- Filter Chips ---------- */
+
+.filters-section {
+    padding: 20px 0 40px;
+}
+
+.filter-group {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.filter-label {
+    font-weight: 700;
+    color: var(--text);
+    min-width: 130px;
+}
+
+.chip {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 2px solid var(--border);
+    border-radius: 50px;
+    background: white;
+    color: var(--text);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: .9rem;
+}
+
+.chip:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.chip.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+/* ---------- Destination Grid ---------- */
+
+.destinations-section { padding: 40px 0 80px; }
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.destination-card {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.destination-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.destination-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-badges {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: .75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.badge-type    { background: #e8e6ff; color: var(--primary); }
+.badge-budget  { background: #d4edda; color: var(--success); }
+
+.destination-content h3 { margin-bottom: 4px; }
+
+.card-country {
+    color: var(--text-light);
+    font-size: .9rem;
+    margin-bottom: 8px;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.price {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.no-results {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 60px 0;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* ---------- Weather Preview ---------- */
+
+.weather-preview {
+    padding: 60px 0;
+    background: var(--surface-light);
+}
+
+.weather-preview-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    max-width: 480px;
+    margin: 30px auto 0;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.weather-preview-card .weather-temp {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 15px 0 8px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width: 768px) {
+    .destination-grid { grid-template-columns: 1fr; }
+    .search-box { flex-direction: column; }
+    .filter-label { min-width: auto; }
+}

@@ -303,3 +303,141 @@ textarea:focus{
 .pb-2{padding-bottom:20px;}
 .pb-3{padding-bottom:30px;}
 .pb-4{padding-bottom:40px;}
+
+/* ==========================================
+   HEADER & NAV
+   ========================================== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: var(--shadow-sm);
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+header nav h2 {
+    color: var(--primary);
+    font-size: 1.6rem;
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+header nav ul,
+header nav ul.nav-links {
+    display: flex;
+    gap: 30px;
+    flex: 1;
+    justify-content: center;
+}
+
+header nav a {
+    font-weight: 600;
+    color: var(--text);
+    transition: var(--transition);
+}
+
+header nav a:hover {
+    color: var(--primary);
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+footer {
+    background: #1a1a2e;
+    color: #ccc;
+    text-align: center;
+    padding: 40px 0;
+}
+
+footer p { color: #ccc; margin-bottom: 12px; }
+
+footer nav { display: block; }
+
+footer nav a {
+    color: var(--accent);
+    font-weight: 500;
+    margin: 0 8px;
+    transition: var(--transition);
+}
+
+footer nav a:hover { color: white; }
+
+/* ==========================================
+   LIGHTBOX
+   ========================================== */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.88);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.active { display: flex; }
+
+.lightbox-inner {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.lightbox-inner img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: var(--radius-md);
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 36px;
+    height: 36px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+/* ==========================================
+   GALLERY THUMB (detail page)
+   ========================================== */
+
+.gallery-thumb {
+    cursor: pointer;
+    transition: var(--transition);
+    border-radius: var(--radius-md);
+}
+
+.gallery-thumb:hover { transform: scale(1.04); }
+
+/* ==========================================
+   RESPONSIVE NAV
+   ========================================== */
+
+@media(max-width: 768px) {
+    header nav { flex-direction: column; gap: 15px; }
+    header nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+}

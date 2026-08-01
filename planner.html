@@ -1,229 +1,269 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wanderlust | Trip Planner</title>
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/planner.css">
+    <link rel="stylesheet" href="css/3d-effects.css">
+    <link rel="stylesheet" href="css/travel-vibes.css">
+    <link rel="stylesheet" href="css/mobile.css">
 </head>
-
 <body>
 
-    <header>
+<header>
+    <nav>
+        <h2>🌍 Wanderlust</h2>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="destination.html">Destination Details</a></li>
+            <li><a href="planner.html">Trip Planner</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
 
-        <nav>
+<main>
 
-            <h2>🌍 Wanderlust</h2>
-
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="destinations.html">Destinations</a></li>
-                <li><a href="destination.html">Destination Details</a></li>
-                <li><a href="planner.html">Trip Planner</a></li>
-            </ul>
-
-        </nav>
-
-    </header>
-
-    <main>
-
-        <section>
-
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
             <h1>Plan Your Dream Trip</h1>
+            <p>Fill in your travel details and estimate your trip budget before you go.</p>
+        </div>
+    </section>
 
-            <p>
-                Fill in your travel details and estimate your trip budget before you travel.
-            </p>
+    <!-- Trip Planner Form + Summary -->
+    <section class="planner-section">
+        <div class="container">
+            <div class="planner-grid">
 
-        </section>
+                <!-- Form -->
+                <div class="form-card">
+                    <h2>🧳 Traveller Information</h2>
+                    <form id="tripForm">
 
-        <!-- Trip Planner Form -->
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required>
 
-        <section>
+                        <label for="destination">Destination</label>
+                        <select id="destination" name="destination">
+                            <option value="Paris">Paris</option>
+                            <option value="Bali">Bali</option>
+                            <option value="Maldives">Maldives</option>
+                            <option value="Manali">Manali</option>
+                            <option value="Dubai">Dubai</option>
+                            <option value="Switzerland">Switzerland</option>
+                        </select>
 
-            <h2>Traveller Information</h2>
+                        <div class="form-row">
+                            <div>
+                                <label for="startDate">Departure Date</label>
+                                <input type="date" id="startDate" name="startDate">
+                            </div>
+                            <div>
+                                <label for="endDate">Return Date</label>
+                                <input type="date" id="endDate" name="endDate">
+                            </div>
+                        </div>
 
-            <form id="tripForm">
+                        <label for="travellers">Number of Travellers</label>
+                        <input type="number" id="travellers" name="travellers" min="1" value="1">
 
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
+                        <label for="transport">Preferred Transport</label>
+                        <select id="transport" name="transport">
+                            <option>Flight</option>
+                            <option>Train</option>
+                            <option>Bus</option>
+                            <option>Car</option>
+                        </select>
 
-                <label for="destination">Destination</label>
-                <select id="destination" name="destination">
+                        <label for="hotel">Accommodation Type</label>
+                        <select id="hotel" name="hotel">
+                            <option>Budget Hotel</option>
+                            <option>Standard Hotel</option>
+                            <option>Luxury Resort</option>
+                            <option>Hostel</option>
+                        </select>
 
-                    <option>Paris</option>
-                    <option>Bali</option>
-                    <option>Maldives</option>
-                    <option>Manali</option>
-                    <option>Dubai</option>
-                    <option>Switzerland</option>
+                        <button type="submit" class="btn" style="width:100%">Plan My Trip</button>
+                    </form>
+                </div>
 
-                </select>
-
-                <label for="startDate">Departure Date</label>
-                <input type="date" id="startDate" name="startDate">
-
-                <label for="endDate">Return Date</label>
-                <input type="date" id="endDate" name="endDate">
-
-                <label for="travellers">Number of Travellers</label>
-                <input type="number" id="travellers" min="1" value="1">
-
-                <label for="transport">Preferred Transport</label>
-
-                <select id="transport">
-
-                    <option>Flight</option>
-                    <option>Train</option>
-                    <option>Bus</option>
-                    <option>Car</option>
-
-                </select>
-
-                <label for="hotel">Accommodation Type</label>
-
-                <select id="hotel">
-
-                    <option>Budget Hotel</option>
-                    <option>Standard Hotel</option>
-                    <option>Luxury Resort</option>
-                    <option>Hostel</option>
-
-                </select>
-
-                <button type="submit">
-                    Plan My Trip
-                </button>
-
-            </form>
-
-        </section>
-
-        <!-- Cost Estimator -->
-
-        <section>
-
-            <h2>Trip Cost Estimator</h2>
-
-            <form id="costEstimator">
-
-                <label for="transportCost">
-                    Estimated Transport Cost (₹)
-                </label>
-
-                <input
-                    type="number"
-                    id="transportCost"
-                    placeholder="Enter amount">
-
-                <label for="hotelCost">
-                    Accommodation Cost (₹)
-                </label>
-
-                <input
-                    type="number"
-                    id="hotelCost"
-                    placeholder="Enter amount">
-
-                <label for="foodCost">
-                    Food Budget (₹)
-                </label>
-
-                <input
-                    type="number"
-                    id="foodCost"
-                    placeholder="Enter amount">
-
-                <label for="activityCost">
-                    Activities Budget (₹)
-                </label>
-
-                <input
-                    type="number"
-                    id="activityCost"
-                    placeholder="Enter amount">
-
-                <button type="button">
-                    Calculate Budget
-                </button>
-
-            </form>
-
-        </section>
-
-        <!-- Estimated Budget -->
-
-        <section>
-
-            <h2>Estimated Trip Budget</h2>
-
-            <div>
-
-                <p><strong>Transport:</strong> ₹0</p>
-
-                <p><strong>Accommodation:</strong> ₹0</p>
-
-                <p><strong>Food:</strong> ₹0</p>
-
-                <p><strong>Activities:</strong> ₹0</p>
-
-                <hr>
-
-                <h3>Total Estimated Cost: ₹0</h3>
+                <!-- Trip Summary (shown after form submit) -->
+                <div class="trip-summary" id="tripSummary">
+                    <h2>✅ Your Trip Summary</h2>
+                    <div class="summary-row">
+                        <span class="summary-label">Traveller</span>
+                        <span class="summary-value" id="summaryName">--</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Destination</span>
+                        <span class="summary-value" id="summaryDest">--</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Travel Dates</span>
+                        <span class="summary-value" id="summaryDates">--</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Duration</span>
+                        <span class="summary-value" id="summaryDays">--</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Travellers</span>
+                        <span class="summary-value" id="summaryTravellers">--</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Transport</span>
+                        <span class="summary-value" id="summaryTransport">--</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Accommodation</span>
+                        <span class="summary-value" id="summaryHotel">--</span>
+                    </div>
+                </div>
 
             </div>
+        </div>
+    </section>
 
-        </section>
+    <!-- Cost Estimator -->
+    <section class="estimator-section">
+        <div class="container">
+            <h2 class="section-title">Trip Cost Estimator</h2>
+            <p class="section-subtitle">Enter your estimated costs to calculate your total trip budget.</p>
+            <div class="estimator-grid">
 
-        <!-- Travel Tips -->
+                <div class="form-card">
+                    <h2>💸 Enter Costs</h2>
 
-        <section>
+                    <label for="transportCost">Transport Cost (per person) ₹</label>
+                    <input type="number" id="transportCost" placeholder="e.g. 15000" min="0">
 
-            <h2>Travel Tips</h2>
+                    <label for="hotelCost">Accommodation Cost (per person) ₹</label>
+                    <input type="number" id="hotelCost" placeholder="e.g. 20000" min="0">
 
-            <ul>
+                    <label for="foodCost">Food Budget (per person) ₹</label>
+                    <input type="number" id="foodCost" placeholder="e.g. 8000" min="0">
 
-                <li>Carry all essential travel documents.</li>
+                    <label for="activityCost">Activities Budget (per person) ₹</label>
+                    <input type="number" id="activityCost" placeholder="e.g. 5000" min="0">
 
-                <li>Check the destination's weather before packing.</li>
+                    <button type="button" class="btn" id="calculateBtn" style="width:100%">Calculate Budget</button>
+                </div>
 
-                <li>Keep emergency contact numbers handy.</li>
+                <!-- Budget Result -->
+                <div class="budget-result" id="budgetResult">
+                    <h2>📊 Budget Breakdown</h2>
+                    <div class="budget-row">
+                        <span>Transport</span>
+                        <span id="resultTransport">₹0</span>
+                    </div>
+                    <div class="budget-row">
+                        <span>Accommodation</span>
+                        <span id="resultHotel">₹0</span>
+                    </div>
+                    <div class="budget-row">
+                        <span>Food</span>
+                        <span id="resultFood">₹0</span>
+                    </div>
+                    <div class="budget-row">
+                        <span>Activities</span>
+                        <span id="resultActivity">₹0</span>
+                    </div>
+                    <div class="budget-row">
+                        <span>Total (all travellers)</span>
+                        <span class="budget-total" id="resultTotal">₹0</span>
+                    </div>
+                </div>
 
-                <li>Book flights and accommodation early for better prices.</li>
+            </div>
+        </div>
+    </section>
 
-                <li>Respect local customs and traditions.</li>
+    <!-- Travel Tips -->
+    <section class="tips-section">
+        <div class="container">
+            <h2 class="section-title">Travel Tips</h2>
+            <p class="section-subtitle">Smart advice for a smooth journey.</p>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">📄</div>
+                    <h3>Documents</h3>
+                    <p>Carry all essential travel documents — passport, visa, and insurance copies.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🌤</div>
+                    <h3>Check the Weather</h3>
+                    <p>Review the destination weather forecast before packing your bags.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">📞</div>
+                    <h3>Emergency Contacts</h3>
+                    <p>Keep emergency contact numbers and embassy details handy.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🎟</div>
+                    <h3>Book Early</h3>
+                    <p>Book flights and accommodation early for better prices and availability.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🙏</div>
+                    <h3>Respect Culture</h3>
+                    <p>Learn basic local customs and always respect traditions at your destination.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">💳</div>
+                    <h3>Currency</h3>
+                    <p>Carry some local currency and notify your bank before international travel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            </ul>
+</main>
 
-        </section>
-
-    </main>
-
-    <footer>
-
+<footer>
+    <div class="container">
         <p>© 2026 Wanderlust. All Rights Reserved.</p>
-
         <nav>
-
             <a href="index.html">Home</a> |
-
             <a href="destinations.html">Destinations</a> |
-
             <a href="destination.html">Destination Details</a> |
-
             <a href="planner.html">Trip Planner</a>
-
         </nav>
+    </div>
+</footer>
 
-    </footer>
+<script src="js/planner.js"></script>
+<script src="js/estimator.js"></script>
+<script src="js/3d-effects.js"></script>
 
-    <script src="js/planner.js"></script>
-    <script src="js/estimator.js"></script>
-
+<script>
+  /* Mobile nav toggle */
+  (function() {
+    var toggle = document.getElementById('navToggle');
+    var links  = document.getElementById('navLinks');
+    if (!toggle || !links) return;
+    toggle.addEventListener('click', function() {
+      var open = links.classList.toggle('mobile-open');
+      toggle.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    links.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A') {
+        links.classList.remove('mobile-open');
+        toggle.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  })();
+</script>
 </body>
-
 </html>
+
