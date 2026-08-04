@@ -1,137 +1,194 @@
-## Day 8 — Build Day 1: Structure & Content
+# Wanderlust
 
-### 👩‍💻 Amita
-- Create project folder structure
-- Build Home page layout
-- Create common Navbar and Footer
-- Create Destination Detail page structure
+Wanderlust is a modern, interactive travel website designed to help users discover dream destinations, explore travel ideas, and plan a trip with ease. The project brings together destination discovery, travel inspiration, trip planning, budget estimation, and live weather information in one simple and visually appealing experience.
 
-### 👩‍💻 Hajara B
-- Build Destinations page
-- Create destination cards
-- Prepare destination data (JSON/JavaScript)
-- Add placeholder images and content
+This project is built as a front-end web application, which means it runs entirely in the browser without needing a database or backend server. All destination information is loaded dynamically from a JSON file, making the website easy to update and expand.
 
 ---
 
-## Day 9 — Build Day 2: Design System & Full Styling
+## What is this project?
 
-### 👩‍💻 Amita
-- Style Home page
-- Style Destination Detail page
-- Design Image Gallery
-- Make layout responsive
+Wanderlust is a travel experience website that allows visitors to:
 
-### 👩‍💻 Hajara B
-- Style Destination Listing page
-- Design filter chips
-- Style destination cards
-- Improve responsive design
+- browse featured destinations
+- explore destination details
+- filter destinations by budget and type
+- search for places by name or country
+- view travel-related information such as currency, language, stay duration, and best travel time
+- use a trip planner to organize travel details
+- estimate trip costs based on travel preferences
+- check live weather information for selected destinations
 
----
-
-## Day 10 — Build Day 3: Interactivity
-
-### 👩‍💻 Amita
-- Implement Image Gallery functionality
-- Create Trip Planner form
-- Add form validation
-- Add page navigation
-
-### 👩‍💻 Hajara B
-- Implement Budget Filter
-- Implement Destination Type Filter
-- Add Search functionality (optional)
-- Connect destination cards to Detail page
+In simple terms, it is a complete travel inspiration and planning website for people who want to discover places and prepare for their next journey.
 
 ---
 
-## Day 11 — Build Day 4: Live Data & Persistence
+## Why this project matters
 
-### 👩‍💻 Amita
-- Develop Trip Cost Estimator
-- Store planner details using Local Storage
-- Display estimated trip summary
+Travel planning can feel overwhelming because users often need to gather information from many different places. Wanderlust solves that by bringing the most important travel details into one interface:
 
-### 👩‍💻 Hajara B
-- Integrate Open-Meteo Weather API
-- Display live weather for selected destination
-- Handle loading and error states
+- where to go
+- what the destination is like
+- how much it may cost
+- how long to stay
+- what the weather might be like
+- how to plan a trip more confidently
 
----
-
-## Day 12 — Deployment & Git Collaboration
-
-### 👩‍💻 Amita
-- Review pull requests
-- Resolve merge conflicts
-- Update README.md
-- Verify project structure
-
-### 👩‍💻 Hajara B
-- Deploy project to Vercel/GitHub Pages
-- Test deployed application
-- Fix deployment issues
-- Verify API functionality after deployment
+This makes the project useful for both beginners and travelers who want a quick, polished planning experience.
 
 ---
 
-## Day 13 — Bug-fix & Polish
+## Main Features
 
-### 👩‍💻 Amita
-- Improve UI consistency
-- Fix responsiveness issues
-- Improve accessibility
-- Final content review
+### 1. Home Page
+The home page acts as the welcome screen for the website. It introduces the brand, highlights featured destinations, and encourages users to explore the site further.
 
-### 👩‍💻 Hajara B
-- Test all filters
-- Test Weather API
-- Fix bugs
-- Optimize performance
+### 2. Destination Explorer
+Users can browse destinations from a central listing page. Each destination card includes:
+- destination name
+- country
+- description
+- price
+- travel category
+- budget level
+
+### 3. Search and Filters
+The destination page includes search and filter options so users can quickly narrow down the list based on:
+- budget
+- destination type
+- search keywords
+
+This makes the browsing experience more intuitive and user-friendly.
+
+### 4. Destination Detail Page
+Each destination has its own detail page where users can view:
+- a detailed description
+- travel highlights
+- attractions
+- itinerary ideas
+- travel information such as currency and language
+- live weather data
+
+### 5. Trip Planner
+The planner page allows users to enter trip details such as:
+- traveller name
+- destination
+- travel dates
+- number of travellers
+- transport preference
+- accommodation type
+
+Once submitted, the planner shows a trip summary so the user can review the plan clearly.
+
+### 6. Budget Estimator
+Users can estimate travel costs by entering values for:
+- transport cost
+- accommodation cost
+- food budget
+- activity budget
+
+The page then calculates and displays the total estimated budget for all travellers.
+
+### 7. Live Weather Integration
+The website uses the Open-Meteo weather API to show live weather information for selected destinations. This adds a practical travel-planning feature and improves the overall experience.
 
 ---
 
-## Day 14 — Final Submission
+## How the Project Works
 
-### 👩‍💻 Amita
-- Final documentation
-- Prepare presentation/demo
-- Verify all pages
-- Submit final repository
+Wanderlust is a front-end project that works in a simple and clear way:
 
-### 👩‍💻 Hajara B
-- Final testing
-- Verify deployment link
-- Review Git history and commits
-- Assist with final submission
+1. The website loads its main pages such as Home, Destinations, Details, and Planner.
+2. Destination data is stored in a JSON file.
+3. JavaScript fetches the data from the JSON file and dynamically renders content on the page.
+4. Users interact with the UI using filters, search, buttons, and forms.
+5. The destination detail page uses the selected destination ID to display the correct information.
+6. The weather section fetches live data from the Open-Meteo API.
+7. The trip planner and budget estimator collect user input and display helpful summaries and totals.
+
+Because the project is client-side, there is no backend logic or database required.
+
+---
+
+## Tech Stack
+
+### Frontend
+- HTML5 for page structure
+- CSS3 for styling and layout
+- JavaScript for interactivity and dynamic content
+
+### Data
+- JSON for destination content and travel details
+
+### APIs
+- Open-Meteo API for weather data
+
+### Tools
+- VS Code for development
+- Git and GitHub for version control
 
 ---
 
-# 📌 Responsibilities Summary
+## Project Structure
 
-## 👩‍💻 Amita
-- Project Structure
-- Home Page
-- Navbar & Footer
-- Destination Detail Page
-- Image Gallery
-- Trip Planner
-- Trip Cost Estimator
-- Local Storage
-- Documentation
-- UI Polish
-- Final Submission
+The project is organized into simple folders for easy navigation:
+
+- index.html
+  - Home page
+
+- destinations.html
+  - Destination listing page
+
+- destination.html
+  - Destination detail page
+
+- planner.html
+  - Trip planner and budget estimator page
+
+- css/
+  - all stylesheets for different pages and components
+
+- js/
+  - app.js
+  - destinations.js
+  - detail.js
+  - estimator.js
+  - filters.js
+  - planner.js
+  - weather.js
+
+- data/
+  - destinations.json
+
+This structure keeps the project manageable and easy to understand.
 
 ---
-## 👩‍💻 Hajara B
-- Destination Listing
-- Destination Cards
-- Budget Filters
-- Type Filters
-- Search (Optional)
-- Dynamic Navigation
-- Open-Meteo Weather API
-- Deployment
-- Testing & Bug Fixes
-- Performance Optimization#
+
+## Pages Overview
+
+### Home Page
+The landing page gives users a first impression of the brand and highlights featured destinations.
+
+### Destinations Page
+This page helps users browse and filter through available travel options.
+
+### Destination Detail Page
+This page gives richer information about one specific destination.
+
+### Trip Planner Page
+This page helps users plan and organize travel details and estimate costs.
+
+---
+
+## How to Run the Project Locally
+
+Because this is a static website, you can run it easily on your machine.
+
+### Option 1: Open directly in a browser
+You can open the HTML files directly in a browser, but for the best experience and smoother loading of data, it is recommended to use a local server.
+
+### Option 2: Use a simple local server
+If you have Python installed, run:
+
+```bash
+python -m http.server 8000
