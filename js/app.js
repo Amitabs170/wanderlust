@@ -16,7 +16,7 @@
           <p>${d.description}</p>
           <div class="card-footer">
             <span class="price">${d.price} / person</span>
-            <a href="destination.html?id=${d.id}" class="btn">View Details</a>
+            <a href="destinations.html" class="btn">Explore</a>
           </div>
         </div>
       </article>
